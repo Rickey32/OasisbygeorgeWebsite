@@ -30,32 +30,32 @@
    4. Go to "Account" → copy your Public Key
    5. Replace the values below.
 
-   MALL 2 — Kundbekräftelse (skapa i EmailJS):
+   MALL 2 — Kundbekräftelse (template_t5afv2i):
    ─────────────────────────────────────────────────────
    Subject:  Bokningsbekräftelse – OasisByGeorge | {{booking_date}} kl {{booking_time}}
    To Email: {{to_email}}
 
-   Hej {{to_name}}! Tack för din bokning hos OasisByGeorge. 🎉
+   Hej {{from_name}}! Tack för din bokning hos OasisByGeorge. 🎉
 
    Din bokning:
      Tjänst:  {{service}}
      Datum:   {{booking_date}}
      Tid:     {{booking_time}}
      Adress:  {{address}}
-     Fönster: {{windows}}
 
    George hör av sig via SMS för att bekräfta.
    Frågor? Ring: 073-877 76 33
 
    – OasisByGeorge
 
-   Kopiera mall-ID och sätt det som clientTemplateId nedan.
+   Mall-ID:t är satt som clientTemplateId nedan.
    ──────────────────────────────────────────────────── */
 
 const EJS = {
   publicKey:        'apkikIgO4LZDCpIax',
   serviceId:        'service_gxd35la',
-  templateId:       'template_e7yu9gl', // används för både George-notifiering och kundbekräftelse
+  templateId:       'template_e7yu9gl', // George-notifiering (bokning + stamkund)
+  clientTemplateId: 'template_t5afv2i', // kundbekräftelse
 };
 
 /* ── Init EmailJS ────────────────────────────────────── */
@@ -423,18 +423,13 @@ function formatDate(dateStr) {
 /* ── Send emails ─────────────────────────────────────── */
 function sendClientConfirmation() {
   if (!booking.email) return Promise.resolve();
-  return emailjs.send(EJS.serviceId, EJS.templateId, {
-    to_email:       booking.email,
-    to_name:        booking.name,
-    from_name:      booking.name,
-    from_phone:     booking.phone,
-    customer_email: booking.email,
-    address:        booking.address,
-    service:        booking.service,
-    booking_date:   formatDate(booking.date),
-    booking_time:   booking.time,
-    windows:        booking.windows || '—',
-    notes:          booking.notes   || '—',
+  return emailjs.send(EJS.serviceId, EJS.clientTemplateId, {
+    to_email:     booking.email,
+    from_name:    booking.name,
+    service:      booking.service,
+    booking_date: formatDate(booking.date),
+    booking_time: booking.time,
+    address:      booking.address,
   });
 }
 
