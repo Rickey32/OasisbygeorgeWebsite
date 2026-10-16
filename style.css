@@ -448,7 +448,7 @@ p  { color: var(--mid); }
 /* ══════════════════════════════════════════════════════
    BOOKING WIZARD
 ══════════════════════════════════════════════════════ */
-#booking { background: var(--white); }
+#booking { background: var(--white); border-top: 1px solid var(--border); }
 .booking-header { text-align: center; max-width: 540px; margin: 0 auto 52px; }
 
 .booking-widget {
@@ -695,7 +695,7 @@ p  { color: var(--mid); }
 .footer-col a:hover { color: var(--white); }
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,.07); padding-top: 22px;
-  display: flex; align-items: center; justify-content: space-between; flex-wrap: gap;
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;
   font-size: .8rem;
 }
 .footer-social { display: flex; gap: 12px; }

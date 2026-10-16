@@ -402,9 +402,15 @@ function buildSummary() {
   document.getElementById('summaryBody').innerHTML = rows.map(([label, val]) =>
     `<div class="summary-row">
        <span class="s-label">${label}</span>
-       <span class="s-val">${val}</span>
+       <span class="s-val">${escapeHtml(val)}</span>
      </div>`
   ).join('');
+}
+
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
 
 function formatDate(dateStr) {
@@ -459,9 +465,9 @@ function submitBooking() {
     document.getElementById('successName').textContent = booking.name.split(' ')[0];
     document.getElementById('successSummary').innerHTML = `
       <strong>📋 Din bokning</strong><br>
-      🪟 ${booking.service}<br>
-      📅 ${formatDate(booking.date)} kl. ${booking.time}<br>
-      📍 ${booking.address}
+      🪟 ${escapeHtml(booking.service)}<br>
+      📅 ${formatDate(booking.date)} kl. ${escapeHtml(booking.time)}<br>
+      📍 ${escapeHtml(booking.address)}
     `;
   }
 
@@ -614,6 +620,7 @@ updateNextBtn();
 
     const slotsVal = slots ? slots.value : '4';
     const params = {
+      to_email:       'oasisbygeorge@gmail.com',
       to_name:        'George',
       from_name:      name.value.trim(),
       from_phone:     phone.value.trim(),
