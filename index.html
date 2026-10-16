@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OasisByGeorge – Fönsterputs i Stockholm</title>
+  <meta name="description" content="Professionell och personlig fönsterputs i Stockholm. Boka direkt online – kvällar och helger möjliga. Ring George: 073-877 76 33." />
+  <meta property="og:title" content="OasisByGeorge – Skinande rena fönster" />
+  <meta property="og:description" content="Boka fönsterputs enkelt online. Snabb offert, flexibla tider, nöjd-kund-garanti." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- EmailJS (free email sending — see setup instructions in script.js) -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ────────────────────────────────────────────────────
+  PROMO BANNER
+──────────────────────────────────────────────────── -->
+<div id="promo-bar">
+  💸 Med RUT-avdrag betalar du bara halva priset — fönsterputs från 450 kr!
+  <span>|</span> Boka online på 2 minuter
+  <button id="promo-close" aria-label="Stäng">✕</button>
+</div>
+
+<!-- ────────────────────────────────────────────────────
+  NAVBAR
+──────────────────────────────────────────────────── -->
+<header id="navbar">
+  <div class="container nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="logo-mark">
+        <svg width="22" height="22" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="34" height="34" rx="5" stroke="white" stroke-width="2.5"/>
+          <line x1="19" y1="5" x2="19" y2="33" stroke="white" stroke-width="1.8" stroke-opacity="0.65"/>
+          <line x1="5" y1="19" x2="33" y2="19" stroke="white" stroke-width="1.8" stroke-opacity="0.65"/>
+          <path d="M11 8.5L12.2 6L13.4 8.5L16 9.7L13.4 10.9L12.2 13.4L11 10.9L8.5 9.7Z" fill="white"/>
+        </svg>
+      </div>
+      <span class="logo-name">Oasis<span class="logo-by">ByGeorge</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">Om George</a></li>
+      <li><a href="#pricing">Priser</a></li>
+      <li><a href="#stamkund">Stamkund</a></li>
+      <li><a href="#booking">Boka</a></li>
+      <li><a href="#faq">Frågor</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="tel:+46738777633" class="nav-phone-link">
+        📞 <span>073-877 76 33</span>
+      </a>
+      <a href="#booking" class="btn">Boka direkt</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Öppna meny">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile nav -->
+<nav class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" id="mobileNavClose">✕</button>
+  <ul>
+    <li><a href="#about">Om George</a></li>
+    <li><a href="#pricing">Priser</a></li>
+    <li><a href="#stamkund">Stamkund</a></li>
+    <li><a href="#gallery">Resultat</a></li>
+    <li><a href="#uterum">Uterum</a></li>
+    <li><a href="#faq">Vanliga frågor</a></li>
+    <li><a href="#areas">Områden</a></li>
+  </ul>
+  <a href="#booking" class="btn btn-full">Boka fönsterputs →</a>
+  <br>
+  <a href="https://wa.me/46738777633" class="btn btn-full hero-whatsapp" style="background:#25d366">💬 Skriv på WhatsApp</a>
+</nav>
+
+<!-- ────────────────────────────────────────────────────
+  HERO
+──────────────────────────────────────────────────── -->
+<section id="hero">
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="live-dot"></span>
+        Lediga tider denna vecka — boka nu
+      </div>
+      <h1>Skinande rena fönster,<br><em>utan att du lyfter ett finger.</em></h1>
+      <p class="hero-desc">
+        Jag heter George och jag putsar fönster i Stockholm med hjärtat. Personlig service,
+        flexibla tider och ett resultat du verkligen kan se igenom.
+      </p>
+      <div class="hero-actions">
+        <a href="#booking" class="btn btn-lg">Boka tid nu →</a>
+        <a href="https://wa.me/46738777633?text=Hej George! Jag är intresserad av fönsterputs." target="_blank" class="btn btn-lg hero-whatsapp">💬 WhatsApp</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat">
+          <div class="hstat-num" data-count="500">0</div>
+          <div class="hstat-label">Nöjda kunder</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat-num" id="rating-stat">4.9 ★</div>
+          <div class="hstat-label">Genomsnittligt omdöme</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat-num">fr. 450 kr</div>
+          <div class="hstat-label">Pris efter RUT-avdrag</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ────────────────────────────────────────────────────
+  TRUST BAR
+──────────────────────────────────────────────────── -->
+<div id="trust">
+  <div class="container trust-row">
+    <div class="trust-item">
+      <svg width="18" height="18" fill="none" stroke="#4ade80" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      Ansvarsförsäkring ingår
+    </div>
+    <div class="trust-item">
+      <svg width="18" height="18" fill="none" stroke="#4ade80" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      Flexibelt — kvällar &amp; helger
+    </div>
+    <div class="trust-item">
+      <svg width="18" height="18" fill="none" stroke="#4ade80" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      Offert samma dag
+    </div>
+    <div class="trust-item">
+      <svg width="18" height="18" fill="none" stroke="#4ade80" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      Miljövänliga medel
+    </div>
+    <div class="trust-item">
+      <svg width="18" height="18" fill="none" stroke="#4ade80" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      Swish &amp; faktura
+    </div>
+  </div>
+</div>
+
+<!-- ────────────────────────────────────────────────────
+  ABOUT GEORGE
+──────────────────────────────────────────────────── -->
+<section id="about" class="section">
+  <div class="container about-grid">
+    <div class="about-img-wrap reveal">
+      <img
+        src="window-2.jpg"
+        alt="George arbetar professionellt med fönsterputs"
+        loading="lazy"
+      />
+      <div class="about-badge">
+        <div class="about-badge-icon">🏆</div>
+        <div class="about-badge-text">
+          <strong>Nöjd-kund-garanti</strong>
+          <span>Inte nöjd? Vi putsar om gratis.</span>
+        </div>
+      </div>
+    </div>
+    <div class="about-content reveal" style="transition-delay:.1s">
+      <span class="tag">Om mig</span>
+      <h2>Hej! Jag heter George — din fönsterputsare i Stockholm.</h2>
+      <p>
+        Jag startade OasisByGeorge för att jag tror att alla förtjänar skinande rena fönster,
+        oavsett om du bor i en etta på Södermalm eller en villa i Danderyd.
+      </p>
+      <p>
+        Det som skiljer mig från stora städbolag? Du pratar alltid direkt med mig.
+        Jag dyker upp i tid, gör ett noggrant jobb och lämnar aldrig innan du är nöjd.
+        Ditt hem behandlar jag med samma omsorg som om det vore mitt eget.
+      </p>
+      <p>
+        Jag jobbar kvällar och helger för att passa din vardag — inte tvärtom.
+        Ring mig direkt, så hittar vi en tid som fungerar för dig!
+      </p>
+      <div class="about-signature">
+        <span class="handwritten">– George CH</span>
+      </div>
+      <div class="about-promise">
+        <svg width="22" height="22" fill="none" stroke="#16a34a" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+        <p><strong>Mitt löfte till dig:</strong> Om du inte är 100% nöjd med resultatet kommer jag tillbaka och putsar om — helt utan kostnad.</p>
+      </div>
+      <div style="margin-top:28px; display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="#booking" class="btn">Boka ett besök →</a>
+        <a href="tel:+46738777633" class="btn btn-ghost">📞 Ring mig direkt</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ────────────────────────────────────────────────────
+  HOW IT WORKS
+──────────────────────────────────────────────────── -->
+<section id="how" class="section">
+  <div class="container">
+    <div class="how-header reveal">
+      <span class="tag">Så enkelt är det</span>
+      <h2>Skinande fönster på 4 enkla steg</h2>
+      <p style="margin-top:10px;color:var(--mid);">Från bokning till kristallklart resultat — utan krångel.</p>
+    </div>
+    <div class="how-steps">
+      <div class="how-step reveal">
+        <div class="step-num">1</div>
+        <h3>Välj tjänst &amp; datum</h3>
+        <p>Boka direkt här på hemsidan. Välj tjänst, datum och tid — tar 2 minuter.</p>
+      </div>
+      <div class="how-step reveal" style="transition-delay:.1s">
+        <div class="step-num">2</div>
+        <h3>Jag bekräftar</h3>
+        <p>Du får ett SMS från mig inom kort. Vi kan också stämma av detaljer om det behövs.</p>
+      </div>
+      <div class="how-step reveal" style="transition-delay:.2s">
+        <div class="step-num">3</div>
+        <h3>Jobbet utförs</h3>
+        <p>Jag kommer i tid, tar med all utrustning och putsar varje fönster noggrant.</p>
+      </div>
+      <div class="how-step reveal" style="transition-delay:.3s">
+        <div class="step-num">4</div>
+        <h3>Du betalar &amp; njuter</h3>
+        <p>Swish eller faktura — du väljer. Sen är det bara att njuta av utsikten!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ────────────────────────────────────────────────────
+  GALLERY
+──────────────────────────────────────────────────── -->
+<section id="gallery" class="section">
+  <div class="container">
+    <div class="gallery-header reveal">
+      <span class="tag">Resultat</span>
+      <h2>Så här ser det ut efteråt</h2>
+      <p class="section-sub">Riktiga bilder från riktiga jobb. Det är det här du kan förvänta dig.</p>
+    </div>
+    <div class="gallery-grid reveal" style="transition-delay:.1s">
+      <div class="gallery-item">
+        <img src="window-1.jpg" alt="Fönster innan putsning — synliga fläckar" loading="lazy" />
+        <div class="gallery-label">Före putsning</div>
+      </div>
+      <div class="gallery-item">
+        <img src="window-3.jpg" alt="Kristallklart fönster efter putsning" loading="lazy" />
+        <div class="gallery-label">Skinande rent resultat</div>
+      </div>
+      <div class="gallery-item">
+        <img src="window-2.jpg" alt="George arbetar noggrant med fönsterputs" loading="lazy" />
+        <div class="gallery-label">Professionellt arbete</div>
+      </div>
+      <div class="gallery-item">
+        <img src="window-4.jpg" alt="Nöjd kund — tummen upp!" loading="lazy" />
+        <div class="gallery-label">Nöjd kund ✓</div>
+      </div>
+    </div>
+
+    <!-- Before / After slider -->
+    <div class="before-after reveal" id="beforeAfter" style="margin-top:32px;transition-delay:.2s">
+      <div class="ba-before">
+        <img src="window-1.jpg" alt="Smutsiga fönster — före putsning" loading="lazy" />
+      </div>
+      <div class="ba-after" id="baAfter">
+        <img src="window-3.jpg" alt="Kristallklara fönster — efter putsning" loading="lazy" />
+      </div>
+      <div class="ba-divider" id="baDivider">
+        <div class="ba-handle">⇔</div>
+      </div>
+      <div class="ba-label-before">Före</div>
+      <div class="ba-label-after">Efter</div>
+    </div>
+    <p style="text-align:center;margin-top:16px;font-size:.82rem;color:rgba(255,255,255,.45);">Dra i mitten för att jämföra</p>
+  </div>
+</section>
+
+<!-- ────────────────────────────────────────────────────
+  PRICING
+──────────────────────────────────────────────────── -->
+<section id="pricing" class="section">
+  <div class="container">
+    <div class="pricing-header reveal">
+      <span class="tag">Prislista</span>
+      <h2>Ärliga priser — inga överraskningar</h2>
+      <p style="margin-top:10px;">Alla priser inkl. moms. <span class="fskatt-note">✓ Godkänd för RUT-avdrag — du betalar bara halva priset (se grönt belopp). George drar av RUT direkt på fakturan, du ansöker inte själv.</span></p>
+    </div>
+
+    <!-- Engångsputs / Abonnemang toggle -->
+    <div class="pricing-toggle reveal" style="transition-delay:.05s">
+      <div class="toggle-wrap">
+        <button class="toggle-btn active" id="toggle-once">Engångsputs</button>
+        <button class="toggle-btn" id="toggle-sub">Abonnemang <span class="toggle-badge">Spara 20%</span></button>
+      </div>
+      <p class="toggle-hint" id="toggleHint">Engångsbokning — boka när du vill, betala per tillfälle.</p>
+    </div>
+
+    <!-- Paketväljare (visas när Abonnemang är aktivt) -->
+    <div class="slot-selector" id="slotSelector">
+      <div class="slot-selector-label">Hur många besök vill du ha i ditt paket?</div>
+      <div class="slot-options">
+        <button class="slot-btn" data-slots="2">2 besök</button>
+        <button class="slot-btn active" data-slots="4">4 besök</button>
+        <button class="slot-btn" data-slots="6">6 besök</button>
+        <button class="slot-btn" data-slots="8">8 besök</button>
+      </div>
+      <p class="slot-note">Boka varje besök när det passar dig — rabatten gäller i 12 månader. Inga bindningstider.</p>
+    </div>
+
+    <div class="pricing-grid">
+
+      <div class="price-card reveal" style="transition-delay:.05s">
+        <div class="price-icon">🏠</div>
+        <h3>Liten bostad</h3>
+        <div class="price-from">1–8 fönster · fr. 100 kr/fönster</div>
+        <div class="price-amount">
+          <span class="price-main" data-once="899" data-sub="719">899</span><span class="price-unit"> kr</span>
+        </div>
+        <div class="price-rut-row">
+          <span class="rut-badge-label">Du betalar med RUT</span>
+          <span class="rut-amount" data-once="450" data-sub="360">450 kr</span>
+        </div>
+        <hr class="price-hr" />
+        <ul class="price-list">
+          <li>1–8 fönster</li>
+          <li>Invändig &amp; utvändig putsning</li>
+          <li>Noggrant resultat</li>
+          <li>Nöjd-kund-garanti</li>
+          <li>Inkl. moms</li>
+        </ul>
+        <div class="price-cta">
+          <a href="#booking" class="btn btn-ghost btn-full">Boka nu</a>
+        </div>
+      </div>
+
+      <div class="price-card popular reveal" style="transition-delay:.1s">
+        <div class="pop-badge">Mest populär</div>
+        <div class="price-icon">🪟</div>
+        <h3>Standard bostad</h3>
+        <div class="price-from">9–15 fönster · fr. 85 kr/fönster</div>
+        <div class="price-amount">
+          <span class="price-main" data-once="1290" data-sub="1032">1 290</span><span class="price-unit"> kr</span>
+        </div>
+        <div class="price-rut-row">
+          <span class="rut-badge-label">Du betalar med RUT</span>
+          <span class="rut-amount" data-once="645" data-sub="516">645 kr</span>
+        </div>
+        <hr class="price-hr" />
+        <ul class="price-list">
+          <li>9–15 fönster</li>
+          <li>Invändig &amp; utvändig putsning</li>
+          <li>Professionellt &amp; noggrant</li>
+          <li>Flexibla tider</li>
+          <li>Nöjd-kund-garanti</li>
+          <li>Inkl. moms</li>
+        </ul>
+        <div class="price-cta">
+          <a href="#booking" class="btn btn-full">Boka nu →</a>
+        </div>
+      </div>
+
+      <div class="price-card reveal" style="transition-delay:.15s">
+        <div class="price-icon">🏡</div>
+        <h3>Stor bostad</h3>
+        <div class="price-from">16–25 fönster · fr. 75 kr/fönster</div>
+        <div class="price-amount">
+          <span class="price-main" data-once="1790" data-sub="1432">1 790</span><span class="price-unit"> kr</span>
+        </div>
+        <div class="price-rut-row">
+          <span class="rut-badge-label">Du betalar med RUT</span>
+          <span class="rut-amount" data-once="895" data-sub="716">895 kr</span>
+        </div>
+        <hr class="price-hr" />
+        <ul class="price-list">
+          <li>16–25 fönster</li>
+          <li>Invändig &amp; utvändig putsning</li>
+          <li>Villor &amp; radhus</li>
+          <li>Flexibla tider</li>
+          <li>Nöjd-kund-garanti</li>
+          <li>Inkl. moms</li>
+        </ul>
+        <div class="price-cta">
+          <a href="#booking" class="btn btn-ghost btn-full">Boka nu</a>
+        </div>
+      </div>
+
+      <div class="price-card reveal" style="transition-delay:.2s">
+        <div class="price-icon">🏘️</div>
+        <h3>XL / Offert</h3>
+        <div class="price-from">26+ fönster · ca 65 kr/fönster</div>
+        <div class="price-amount"><span class="price-xl-label">Offert</span></div>
+        <div class="price-rut-row">
+          <span class="rut-badge-label">RUT-avdrag</span>
+          <span class="rut-amount rut-muted">gäller — halva priset</span>
+        </div>
+        <hr class="price-hr" />
+        <ul class="price-list">
+          <li>26+ fönster</li>
+          <li>Skräddarsytt pris</li>
+          <li>Kostnadsfri offert</li>
+          <li>Invändig &amp; utvändig putsning</li>
+          <li>Nöjd-kund-garanti</li>
+          <li>Inkl. moms</li>
+        </ul>
+        <div class="price-cta">
+          <a href="tel:+46738777633" class="btn btn-ghost btn-full">📞 Ring för offert</a>
+        </div>
+      </div>
+
+    </div>
+
+
+    <p style="text-align:center;max-width:620px;margin:30px auto 0;font-size:.86rem;color:var(--mid);line-height:1.7;">💚 <strong>Så funkar RUT-avdraget:</strong> Du betalar bara det gröna priset. George (F-skatt) drar av 50% direkt på fakturan — du ansöker inte själv. Gäller privatpersoner, upp till 75&nbsp;000 kr per person och år.</p>
+
+    <div class="addons-section reveal" style="transition-delay:.1s">
+      <div class="addons-title">Tillval — lägg till vid bokning</div>
+      <div class="addon-chips">
+        <div class="addon-chip">🔲 Spröjs <span class="chip-price">+30 kr/fönster</span></div>
+        <div class="addon-chip">🪜 Karmrengöring <span class="chip-price">+25 kr/fönster</span></div>
+        <div class="addon-chip">🪟 Persienner <span class="chip-price">+20 kr/st</span></div>
+        <div class="addon-chip">🦟 Myggnät <span class="chip-price">+20 kr/st</span></div>
+        <div class="addon-chip">⚡ Akutbesök <span class="chip-price">+299 kr</span></div>
+        <div class="addon-chip">🏗️ Svåråtkomliga fönster <span class="chip-price">+50 kr/fönster</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ────────────────────────────────────────────────────
+  UTERUM
+──────────────────────────────────────────────────── -->
+<section id="uterum" class="uterum-section">
+  <div class="container">
+    <div class="uterum-inner">
+      <div class="uterum-content reveal">
+        <span class="tag" style="background:rgba(255,255,255,.12);color:#bfdbfe;">Uterum &amp; Balkongglas</span>
+        <h2 style="color:#fff;margin-top:14px;">Större glaspartier?<br>Kostnadsfri offert på 2 min.</h2>
+        <p style="color:rgba(255,255,255,.72);margin-top:14px;font-size:1.02rem;line-height:1.75;">Uterum, balkongglas och skjutpartier är ett eget jobb. Priset beror på storlek och åtkomlighet — ring George direkt så räknar vi ut det tillsammans. <strong>RUT-avdrag gäller även här — du betalar bara halva.</strong></p>
+        <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="tel:+46738777633" class="btn btn-lg">📞 Ring för offert</a>
+          <a href="https://wa.me/46738777633" target="_blank" class="btn btn-lg hero-whatsapp">💬 WhatsApp</a>
+        </div>
+      </div>
+      <div class="uterum-features reveal" style="transition-delay:.1s">
+        <div class="uter-feat">✓ Uterum</div>
+        <div class="uter-feat">✓ Balkongglas</div>
+        <div class="uter-feat">✓ Skjutpartier</div>
+        <div class="uter-feat">✓ Större glasytor</div>
+        <div class="uter-feat">✓ Kostnadsfri offert</div>
+        <div class="uter-feat">✓ RUT-avdrag gäller</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ────────────────────────────────────────────────────
+  STAMKUND
+──────────────────────────────────────────────────── -->
+<section id="stamkund" class="section" style="background:var(--white);">
+  <div class="container">
+    <div class="stamkund-inner">
+      <div class="stamkund-content reveal">
+        <span class="tag">Stamkund</span>
+        <h2>Bli stamkund —<br>spar pengar varje gång.</h2>
+        <p style="margin-top:14px;font-size:1.05rem;line-height:1.75;">Registrera dig en gång. Välj ditt paket och boka varje besök när det passar dig — alltid till 20% rabatt. Inga bindningstider, inga automatiska aviseringar.</p>
+        <div class="stamkund-perks">
+          <div class="perk-item">
+            <div class="perk-icon">💰</div>
+            <div>
+              <strong>20% lägre pris</strong>
+              <span>Fast rabatt på varje besök</span>
+            </div>
+          </div>
+          <div class="perk-item">
+            <div class="perk-icon">📅</div>
+            <div>
+              <strong>Prioriterad bokning</strong>
+              <span>Du väljer alltid tid först</span>
+            </div>
+          </div>
+          <div class="perk-item">
+            <div class="perk-icon">🔔</div>
+            <div>
+              <strong>Flexibel ombokning</strong>
+              <span>Boka nästa besök när du vill — inom ditt paket</span>
+            </div>
+          </div>
+          <div class="perk-item">
+            <div class="perk-icon">🏆</div>
+            <div>
+              <strong>Nöjd-kund-garanti</strong>
+              <span>Alltid samma höga standard</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="stamkund-form-wrap reveal" style="transition-delay:.1s">
+        <div class="stamkund-form-card">
+          <div class="stamkund-form-header">
+            <h3>Registrera dig som stamkund</h3>
+            <p>Gratis &amp; utan bindningstid. George hör av sig för att bekräfta.</p>
+          </div>
+          <form id="stamkund-form" class="stamkund-form" novalidate>
+            <div class="form-group">
+              <label for="sk-name">Namn *</label>
+              <input type="text" id="sk-name" placeholder="Anna Andersson" required />
+            </div>
+            <div class="form-group">
+              <label for="sk-phone">Telefon *</label>
+              <input type="tel" id="sk-phone" placeholder="070-000 00 00" required />
+            </div>
+            <div class="form-group">
+              <label for="sk-email">E-post *</label>
+              <input type="email" id="sk-email" placeholder="anna@exempel.se" required />
+            </div>
+            <div class="form-group">
+              <label for="sk-address">Adress &amp; stadsdel *</label>
+              <input type="text" id="sk-address" placeholder="Storgatan 12, Östermalm" required />
+            </div>
+            <div class="form-group">
+              <label for="sk-windows">Ungefär antal fönster</label>
+              <input type="number" id="sk-windows" placeholder="T.ex. 12" min="1" />
+            </div>
+            <div class="form-group">
+              <label for="sk-slots">Antal besök i ditt paket *</label>
+              <select id="sk-slots" required>
+                <option value="2">2 besök</option>
+                <option value="4" selected>4 besök</option>
+                <option value="6">6 besök</option>
+                <option value="8">8 besök</option>
+                <option value="custom">Annat antal — George hör av sig</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-full" id="sk-submit">Bli stamkund — spara 20% →</button>
+            <p class="gdpr-note" style="margin-top:10px;">Inga dolda avgifter. Avboka när som helst.</p>
+          </form>
+          <div class="stamkund-success" id="stamkund-success" style="display:none;">
+            <div class="success-circle">🎉</div>
+            <h3>Välkommen som stamkund!</h3>
+            <p>George hör av sig inom kort för att bekräfta ditt paket och boka ditt första besök.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ────────────────────────────────────────────────────
+  BOOKING WIZARD
+──────────────────────────────────────────────────── -->
+<section id="booking" class="section" style="background:var(--cream);">
+  <div class="container">
+    <div class="booking-header reveal">
+      <span class="tag">Boka online</span>
+      <h2>Boka din fönsterputs på 2 minuter</h2>
+      <p style="margin-top:10px;">Välj tjänst, datum och tid — jag bekräftar via SMS.</p>
+    </div>
+
+    <div class="booking-widget reveal" style="transition-delay:.1s">
+
+      <!-- Progress -->
+      <div class="booking-progress" id="bookingProgress">
+        <div class="progress-steps">
+          <div class="prog-step active" id="prog-1">
+            <div class="prog-dot">1</div>
+            <div class="prog-label">Tjänst</div>
+          </div>
+          <div class="prog-step" id="prog-2">
+            <div class="prog-dot">2</div>
+            <div class="prog-label">Datum</div>
+          </div>
+          <div class="prog-step" id="prog-3">
+            <div class="prog-dot">3</div>
+            <div class="prog-label">Tid</div>
+          </div>
+          <div class="prog-step" id="prog-4">
+            <div class="prog-dot">4</div>
+            <div class="prog-label">Uppgifter</div>
+          </div>
+          <div class="prog-step" id="prog-5">
+            <div class="prog-dot">5</div>
+            <div class="prog-label">Bekräfta</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Steps body -->
+      <div class="booking-body">
+
+        <!-- STEP 1: Service -->
+        <div class="booking-step active" id="step-1">
+          <div class="step-title">Vad kan jag hjälpa dig med? 🪟</div>
+          <div class="step-sub">Välj den tjänst som passar ditt hem bäst.</div>
+          <div class="service-cards">
+            <div class="service-card" data-service="Liten bostad — 1–8 fönster (fr. 899 kr, 450 kr efter RUT)" data-icon="🏠">
+              <div class="sc-icon">🏠</div>
+              <div>
+                <div class="sc-name">Liten bostad</div>
+                <div class="sc-price">1–8 fönster — fr. 899 kr · <strong>450 kr efter RUT</strong></div>
+              </div>
+            </div>
+            <div class="service-card" data-service="Standard bostad — 9–15 fönster (fr. 1 290 kr, 645 kr efter RUT)" data-icon="🪟">
+              <div class="sc-icon">🪟</div>
+              <div>
+                <div class="sc-name">Standard bostad</div>
+                <div class="sc-price">9–15 fönster — fr. 1 290 kr · <strong>645 kr efter RUT</strong></div>
+              </div>
+            </div>
+            <div class="service-card" data-service="Stor bostad — 16–25 fönster (fr. 1 790 kr, 895 kr efter RUT)" data-icon="🏡">
+              <div class="sc-icon">🏡</div>
+              <div>
+                <div class="sc-name">Stor bostad</div>
+                <div class="sc-price">16–25 fönster — fr. 1 790 kr · <strong>895 kr efter RUT</strong></div>
+              </div>
+            </div>
+            <div class="service-card" data-service="XL / Uterum / Offert — 26+ fönster" data-icon="🏘️">
+              <div class="sc-icon">🏘️</div>
+              <div>
+                <div class="sc-name">XL / Uterum / Offert</div>
+                <div class="sc-price">26+ fönster eller uterum — George ger offert</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 2: Date -->
+        <div class="booking-step" id="step-2">
+          <div class="step-title">Vilket datum passar dig? 📅</div>
+          <div class="step-sub">Jag jobbar måndag–lördag. Välj ett datum som passar.</div>
+          <div class="calendar-wrap">
+            <div class="cal-nav">
+              <button id="calPrev" aria-label="Föregående månad">←</button>
+              <span class="cal-month" id="calMonthLabel"></span>
+              <button id="calNext" aria-label="Nästa månad">→</button>
+            </div>
+            <div class="cal-grid" id="calGrid"></div>
+          </div>
+        </div>
+
+        <!-- STEP 3: Time -->
+        <div class="booking-step" id="step-3">
+          <div class="step-title">Vilken tid passar dig? ⏰</div>
+          <div class="step-sub">Alla tider är tillgängliga — välj det som passar din dag.</div>
+          <div class="time-slots">
+            <div class="time-slot" data-time="08:00">
+              <div class="ts-time">08:00</div>
+              <div class="ts-label">Tidig morgon</div>
+            </div>
+            <div class="time-slot popular" data-time="10:00">
+              <div class="ts-time">10:00</div>
+              <div class="ts-label">⭐ Morgon</div>
+            </div>
+            <div class="time-slot" data-time="12:00">
+              <div class="ts-time">12:00</div>
+              <div class="ts-label">Middag</div>
+            </div>
+            <div class="time-slot popular" data-time="14:00">
+              <div class="ts-time">14:00</div>
+              <div class="ts-label">⭐ Eftermiddag</div>
+            </div>
+            <div class="time-slot" data-time="16:00">
+              <div class="ts-time">16:00</div>
+              <div class="ts-label">Sen eftermiddag</div>
+            </div>
+            <div class="time-slot" data-time="18:00">
+              <div class="ts-time">18:00</div>
+              <div class="ts-label">Kväll</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 4: Details -->
+        <div class="booking-step" id="step-4">
+          <div class="step-title">Dina uppgifter 👤</div>
+          <div class="step-sub">Så jag vet vem jag ska kontakta för bekräftelse.</div>
+          <div class="details-grid">
+            <div class="form-group">
+              <label for="b-name">Namn *</label>
+              <input type="text" id="b-name" placeholder="Anna Andersson" required />
+            </div>
+            <div class="form-group">
+              <label for="b-phone">Telefon *</label>
+              <input type="tel" id="b-phone" placeholder="070-000 00 00" required />
+            </div>
+            <div class="form-group">
+              <label for="b-email">E-post * (för bokningsbekräftelse)</label>
+              <input type="email" id="b-email" placeholder="anna@exempel.se" required />
+            </div>
+            <div class="form-group">
+              <label for="b-windows">Antal fönster (ca)</label>
+              <input type="number" id="b-windows" placeholder="T.ex. 8" min="1" />
+            </div>
+            <div class="form-group full">
+              <label for="b-address">Adress &amp; stadsdel *</label>
+              <input type="text" id="b-address" placeholder="Drottninggatan 12, Östermalm" required />
+            </div>
+            <div class="form-group full">
+              <label for="b-notes">Övrigt (tillval, access, önskemål…)</label>
+              <textarea id="b-notes" placeholder="T.ex. Nyckel hänger hos grannfröken / jag vill ha karmrengöring med / hund i lägenheten..."></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 5: Confirm -->
+        <div class="booking-step" id="step-5">
+          <div class="step-title">Bekräfta din bokning ✅</div>
+          <div class="step-sub">Kontrollera att allt stämmer — sedan skickar vi din bokning till George.</div>
+          <div class="booking-summary">
+            <div class="summary-header"><h3>Din bokningssammanfattning</h3></div>
+            <div class="summary-body" id="summaryBody"></div>
+          </div>
+          <p class="gdpr-note">
+            Genom att skicka bokningen godkänner du att dina uppgifter används för att hantera din bokning.
+            Uppgifterna delas inte med tredje part. <a href="#" style="color:var(--blue);">Integritetspolicy</a>.
+          </p>
+        </div>
+
+      </div><!-- /booking-body -->
+
+      <!-- Footer nav -->
+      <div class="booking-footer" id="bookingFooter">
+        <button class="back-btn" id="backBtn" style="visibility:hidden">← Tillbaka</button>
+        <button class="btn btn-lg" id="nextBtn">Välj tjänst för att fortsätta</button>
+      </div>
+
+      <!-- Success screen (replaces widget after submit) -->
+      <div class="booking-success" id="bookingSuccess">
+        <div class="success-circle">🎉</div>
+        <h2>Bokning mottagen!</h2>
+        <p>Tack, <strong id="successName"></strong>! Din bokningsförfrågan har skickats till George. En bekräftelse har skickats till din e-post — han hör även av sig via SMS inom kort.</p>
+        <div style="background:var(--cream);border-radius:12px;padding:16px 20px;margin:20px auto;max-width:380px;text-align:left;" id="successSummary"></div>
+        <a href="https://wa.me/46738777633" target="_blank" class="btn hero-whatsapp" style="background:#25d366;box-shadow:0 4px 18px rgba(37,211,102,.35);margin-top:8px;">
+          💬 Skriv till George på WhatsApp
+        </a>
+      </div>
+
+    </div><!-- /booking-widget -->
+  </div>
+</section>
+
+<!-- ────────────────────────────────────────────────────
+  REVIEWS
+──────────────────────────────────────────────────── -->
+<section id="reviews" class="section">
+  <div class="container">
+    <div class="reviews-header reveal">
+      <span class="tag">Omdömen</span>
+      <div class="stars-big">⭐⭐⭐⭐⭐</div>
+      <div class="rating-big">4.9</div>
+      <div class="rating-count">Baserat på 180+ recensioner</div>
+      <h2 style="margin-top:14px;">Det här säger mina kunder</h2>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="review-top">
+          <div class="review-avatar review-initials" style="background:#1d6ed8" aria-label="Anna K">AK</div>
+          <div>
+            <div class="review-name">Anna K.</div>
+            <div class="review-location">Lidingö</div>
+            <div class="review-stars">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+        <p class="review-text">
+          "George är fantastisk! Han kom exakt i tid, var superprofessionell och fönstren
+          ser ut som nya. Jag bokade via hemsidan och det gick på en minut. Varmt rekommenderat!"
+        </p>
+        <div class="review-date">Maj 2026</div>
+      </div>
+
+      <div class="review-card reveal" style="transition-delay:.1s">
+        <div class="review-top">
+          <div class="review-avatar review-initials" style="background:#10b981" aria-label="Johan M">JM</div>
+          <div>
+            <div class="review-name">Johan M.</div>
+            <div class="review-location">Bromma</div>
+            <div class="review-stars">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+        <p class="review-text">
+          "Bästa fönsterputsaren i Stockholm! Pålitlig, punktlig och dessutom schysst att
+          prata med. Han kom en lördag morgon och var klar på nolltid. Boken regelbundet nu."
+        </p>
+        <div class="review-date">April 2026</div>
+      </div>
+
+      <div class="review-card reveal" style="transition-delay:.2s">
+        <div class="review-top">
+          <div class="review-avatar review-initials" style="background:#f59e0b" aria-label="Sara P">SP</div>
+          <div>
+            <div class="review-name">Sara P.</div>
+            <div class="review-location">Vasastan</div>
+            <div class="review-stars">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+        <p class="review-text">
+          "Jag hade provat flera olika fönsterputsare men George slår dem alla. Noggrant,
+          snabbt och till ett rimligt pris. Dessutom svarade han på WhatsApp inom 5 minuter!"
+        </p>
+        <div class="review-date">Mars 2026</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ────────────────────────────────────────────────────
+  FAQ
+──────────────────────────────────────────────────── -->
+<section id="faq" class="section">
+  <div class="container faq-grid">
+    <div class="faq-intro reveal">
+      <span class="tag">Frågor &amp; svar</span>
+      <h2>Vanliga frågor</h2>
+      <p style="margin-top:10px;">Hittar du inte svaret du söker? Ring mig direkt — jag svarar alltid!</p>
+      <div style="margin-top:24px;display:flex;flex-direction:column;gap:10px;">
+        <a href="tel:+46738777633" class="btn">📞 Ring George</a>
+        <a href="https://wa.me/46738777633" target="_blank" class="btn btn-ghost" style="background:transparent">💬 WhatsApp</a>
+      </div>
+    </div>
+    <div class="faq-list reveal" style="transition-delay:.1s">
+      <div class="faq-item">
+        <button class="faq-q">
+          Hur fungerar RUT-avdraget?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Som privatperson betalar du bara <strong>halva arbetskostnaden</strong> för fönsterputs tack vare RUT-avdraget. Jag drar av RUT direkt på fakturan — du behöver inte ansöka själv eller ligga ute med pengarna. Du betalar alltså bara 50%, resten sköter jag med Skatteverket. RUT gäller upp till 75 000 kr per person och år, så det räcker gott och väl för fönsterputs året runt.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          Hur lång tid tar fönsterputsning?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Det beror på antal fönster och storlek. En vanlig lägenhet med 8–12 fönster tar ungefär 1–2 timmar. Större objekt tar naturligtvis längre tid. Jag ger dig en uppskattad tid vid bokning.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          Behöver jag vara hemma under jobbet?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Inte nödvändigtvis! Många kunder lämnar en nyckel eller kodlås-kod. Vi stämmer av det som passar bäst för dig. Om du är hemma är du självklart välkommen att följa med och se resultatet.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          Vad ingår i priset?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Alla priser inkluderar invändig och utvändig putsning av fönsterglasen. Rengöring av karmar är ett tillval (+25 kr/fönster). Allt pris är inkl. moms och inga dolda avgifter tillkommer.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          Använder ni miljövänliga rengöringsmedel?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Ja! Jag använder miljömärkta och biologiskt nedbrytbara rengöringsmedel som är skonsamma mot både miljön och ditt hem. Inga aggressiva kemikalier.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          Hur betalar jag?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Du kan betala via Swish direkt efter utfört jobb, eller via faktura med 10 dagars betalningsvillkor. Välj det som passar dig bäst — inga extra avgifter.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          Vad händer om jag inte är nöjd?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Då kommer jag tillbaka och gör om det — helt utan kostnad. Det är mitt löfte. Jag är inte nöjd förrän du är nöjd. I 5+ år av jobb har detta sällan behövts, men garantin finns alltid där.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ────────────────────────────────────────────────────
+  AREAS
+──────────────────────────────────────────────────── -->
+<section id="areas" class="section-sm">
+  <div class="container">
+    <div class="areas-header reveal">
+      <span class="tag">Verksamhetsområde</span>
+      <h2>Hela Stockholm — och lite till</h2>
+      <p style="margin-top:10px;">Hittar du inte din stadsdel? Ring mig — är det rimligt avstånd kör jag dit.</p>
+    </div>
+    <div class="areas-grid reveal" style="transition-delay:.1s">
+      <div class="area-pill">Östermalm</div>
+      <div class="area-pill">Södermalm</div>
+      <div class="area-pill">Vasastan</div>
+      <div class="area-pill">Kungsholmen</div>
+      <div class="area-pill">Djurgården</div>
+      <div class="area-pill">Lidingö</div>
+      <div class="area-pill">Bromma</div>
+      <div class="area-pill">Solna</div>
+      <div class="area-pill">Sundbyberg</div>
+      <div class="area-pill">Nacka</div>
+      <div class="area-pill">Täby</div>
+      <div class="area-pill">Danderyd</div>
+      <div class="area-pill">Värmdö</div>
+      <div class="area-pill">Huddinge</div>
+      <div class="area-pill">Hägersten</div>
+      <div class="area-pill">& mer...</div>
+    </div>
+  </div>
+</section>
+
+<!-- ────────────────────────────────────────────────────
+  CTA
+──────────────────────────────────────────────────── -->
+<section id="cta" class="section">
+  <div class="container">
+    <span class="tag tag-amber" style="display:block;text-align:center;margin-bottom:14px;">Redo att boka?</span>
+    <h2>Ge dina fönster lite kärlek idag.</h2>
+    <p>Boka online på 2 minuter, eller ring mig direkt. Jag svarar alltid.</p>
+    <div class="cta-actions">
+      <a href="#booking" class="btn btn-lg">Boka online nu →</a>
+      <a href="tel:+46738777633" class="btn btn-lg cta-phone-btn">📞 073-877 76 33</a>
+      <a href="https://wa.me/46738777633?text=Hej George! Jag vill boka fönsterputs." target="_blank" class="btn btn-lg" style="background:#25d366;box-shadow:0 4px 18px rgba(37,211,102,.3);">💬 WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- ────────────────────────────────────────────────────
+  FOOTER
+──────────────────────────────────────────────────── -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo footer-logo-link" style="display:inline-flex;align-items:center;gap:10px;color:#fff;margin-bottom:14px;">
+          <div class="logo-mark" style="width:32px;height:32px;background:var(--blue);border-radius:8px;display:flex;align-items:center;justify-content:center;">
+            <svg width="18" height="18" viewBox="0 0 38 38" fill="none">
+              <rect x="2" y="2" width="34" height="34" rx="5" stroke="white" stroke-width="2.5"/>
+              <line x1="19" y1="5" x2="19" y2="33" stroke="white" stroke-width="1.8" stroke-opacity="0.65"/>
+              <line x1="5" y1="19" x2="33" y2="19" stroke="white" stroke-width="1.8" stroke-opacity="0.65"/>
+              <path d="M11 8.5L12.2 6L13.4 8.5L16 9.7L13.4 10.9L12.2 13.4L11 10.9L8.5 9.7Z" fill="white"/>
+            </svg>
+          </div>
+          <span class="logo-name" style="color:#fff;">Oasis<span class="logo-by" style="color:rgba(255,255,255,0.65);">ByGeorge</span></span>
+        </a>
+        <p>Professionell och personlig fönsterputs i Stockholm. Boka direkt online eller ring George.</p>
+        <div class="footer-social" style="margin-top:16px;">
+          <a href="https://wa.me/46738777633" class="social-btn" title="WhatsApp">💬</a>
+          <a href="tel:+46738777633" class="social-btn" title="Ring">📞</a>
+          <a href="mailto:oasisbygeorge@gmail.com" class="social-btn" title="E-post">✉️</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Tjänster</h4>
+        <ul>
+          <li><a href="#pricing">Fönsterputs</a></li>
+          <li><a href="#uterum">Uterum &amp; Balkongglas</a></li>
+          <li><a href="#stamkund">Stamkund</a></li>
+          <li><a href="#pricing">Priser &amp; RUT-avdrag</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Kontakt</h4>
+        <ul>
+          <li><a href="tel:+46738777633">073-877 76 33</a></li>
+          <li><a href="mailto:oasisbygeorge@gmail.com">oasisbygeorge@gmail.com</a></li>
+          <li><a href="#areas">Stockholmsområdet</a></li>
+          <li><a href="#booking">Boka online</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 OasisByGeorge – George CH</span>
+      <span>✓ Godkänd för RUT-avdrag · Org.nr / F-skattsedel vid begäran</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ────────────────────────────────────────────────────
+  FLOATING BUTTONS
+──────────────────────────────────────────────────── -->
+<div class="float-group">
+  <a href="https://wa.me/46738777633?text=Hej George! Jag vill boka fönsterputs." target="_blank" class="float-btn float-wa" title="Skriv på WhatsApp" aria-label="WhatsApp">💬</a>
+  <a href="tel:+46738777633" class="float-btn float-call" title="Ring George" aria-label="Ring">📞</a>
+</div>
+
+<!-- ────────────────────────────────────────────────────
+  GDPR COOKIE BANNER
+──────────────────────────────────────────────────── -->
+<div id="cookie-banner" role="banner" aria-label="Cookie-information">
+  <p>
+    Vi använder nödvändiga cookies för att webbplatsen ska fungera korrekt.
+    Inga spårningscookies utan ditt godkännande.
+    <a href="#">Läs mer</a>.
+  </p>
+  <div class="cookie-btns">
+    <button class="cookie-accept" id="cookieAccept">Godkänn</button>
+    <button class="cookie-decline" id="cookieDecline">Avvisa</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
