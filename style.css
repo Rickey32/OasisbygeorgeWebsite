@@ -180,6 +180,15 @@ p  { color: var(--mid); }
 .hstat:last-child { border-right: none; margin-right: 0; padding-right: 0; }
 .hstat-num { font-size: 1.9rem; font-weight: 900; color: var(--white); line-height: 1; }
 .hstat-label { font-size: .78rem; color: rgba(255,255,255,.55); margin-top: 4px; font-weight: 500; }
+.hero-flytt {
+  display: inline-flex; align-items: center; gap: 6px; margin-top: 32px;
+  font-size: .88rem; font-weight: 500; color: rgba(255,255,255,.7);
+  border-bottom: 1px solid rgba(255,255,255,.25); padding-bottom: 2px;
+  transition: color var(--trans), border-color var(--trans);
+}
+.hero-flytt span { color: #7dd3fc; transition: transform var(--trans); }
+.hero-flytt:hover { color: var(--white); border-color: #7dd3fc; }
+.hero-flytt:hover span { transform: translateX(3px); }
 
 /* ══════════════════════════════════════════════════════
    TRUST BAR
@@ -407,6 +416,53 @@ p  { color: var(--mid); }
 }
 .addon-chip:hover { border-color: var(--blue); color: var(--blue); }
 .chip-price { color: var(--blue); }
+
+/* ══════════════════════════════════════════════════════
+   FLYTTSTÄDNING
+══════════════════════════════════════════════════════ */
+#flyttstad { background: var(--white); }
+.flytt-header { text-align: center; max-width: 660px; margin: 0 auto 52px; }
+.flytt-header .fskatt-note { margin-top: 12px; }
+.flytt-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 28px; align-items: start; }
+.flytt-card {
+  background: var(--cream); border-radius: var(--radius); padding: 32px 28px;
+  border: 1.5px solid var(--border);
+}
+.flytt-card-title { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+.flytt-card-title .price-icon { margin-bottom: 0; }
+.flytt-card-title h3 { font-size: 1.05rem; margin-bottom: 2px; }
+.flytt-card-title .price-from { margin-bottom: 0; }
+.flytt-addon-title { margin-top: 36px; }
+.flytt-table { width: 100%; border-collapse: collapse; }
+.flytt-table th {
+  font-size: .7rem; font-weight: 700; color: var(--muted); text-transform: uppercase;
+  letter-spacing: .05em; text-align: left; padding: 0 0 10px;
+}
+.flytt-table td {
+  padding: 13px 0; border-top: 1px solid var(--border);
+  font-size: .93rem; color: var(--mid); font-weight: 500;
+}
+.flytt-table th:not(:first-child), .flytt-table td:not(:first-child) { text-align: right; }
+.flytt-table td:first-child { color: var(--dark); font-weight: 600; }
+.flytt-table td:nth-child(2) { font-weight: 800; color: var(--dark); padding-right: 16px; }
+.flytt-rut {
+  display: inline-block; background: #f0fdf4; color: #166534;
+  font-weight: 800; padding: 4px 11px; border-radius: 50px; white-space: nowrap;
+}
+.flytt-side { display: flex; flex-direction: column; gap: 18px; }
+.flytt-includes {
+  background: var(--white); border-radius: var(--radius); padding: 28px;
+  border: 1.5px solid var(--border);
+}
+.flytt-includes h3 { margin-bottom: 16px; }
+.flytt-includes .price-list li { font-size: .93rem; }
+.flytt-cta {
+  background: #f0f7ff; border-radius: var(--radius); padding: 28px;
+  border: 1.5px solid var(--blue-lt);
+}
+.flytt-cta p { font-size: .9rem; margin-bottom: 18px; }
+.flytt-cta-alt { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+.flytt-cta-alt .btn { justify-content: center; padding: 12px 16px; font-size: .9rem; }
 
 /* ══════════════════════════════════════════════════════
    UTERUM SECTION
@@ -750,6 +806,7 @@ p  { color: var(--mid); }
    RESPONSIVE
 ══════════════════════════════════════════════════════ */
 @media (max-width: 1024px) {
+  .nav-links { gap: 20px; }
   .how-steps { grid-template-columns: repeat(2,1fr); }
   .how-step::after { display: none; }
   .footer-top { grid-template-columns: 1fr 1fr; }
@@ -757,6 +814,7 @@ p  { color: var(--mid); }
   .gallery-item:first-child { grid-row: auto; }
   .pricing-grid { grid-template-columns: repeat(2,1fr); }
   .uterum-inner { grid-template-columns: 1fr; gap: 44px; }
+  .flytt-grid { grid-template-columns: 1fr; max-width: 640px; margin: 0 auto; }
   .stamkund-inner { grid-template-columns: 1fr; gap: 48px; }
 }
 
@@ -789,6 +847,8 @@ p  { color: var(--mid); }
   .toggle-btn { padding: 9px 16px; font-size: .85rem; }
   .stamkund-form { padding: 20px; }
   .stamkund-form-header { padding: 20px; }
+  .flytt-card { padding: 24px 18px; }
+  .flytt-table td { font-size: .86rem; }
 }
 
 @media (max-width: 480px) {
@@ -801,4 +861,6 @@ p  { color: var(--mid); }
   .ba-handle { width: 36px; height: 36px; }
   .prog-label { display: none; }
   .cta-actions { flex-direction: column; align-items: center; }
+  .flytt-cta-alt { grid-template-columns: 1fr; }
+  .hero-flytt { font-size: .82rem; }
 }
